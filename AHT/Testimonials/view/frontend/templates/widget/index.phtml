@@ -1,0 +1,39 @@
+<?php if($block->getData('posts')): ?>
+<div class="testimonial-container">
+    <h2>WHAT OUR CLIENTS ARE SAYING</h2>
+    <ol class="testimonial-blog">
+            <?php
+            foreach ( $block->getAll() as $item) {
+                if($item->getStatus()){
+                    echo "<li>";
+                    echo "<img src=".$block->getBaseUrl()."pub/media/pathtoyourimage/".$item->getImage().">";
+                    // var_dump($block->getBaseUrl()."pub/media/downloadable/".$item->getImage());
+                    // die();
+                    // echo "<p>".$item->getEmail()."</p>";
+                    // echo "<p>".$item->getContact()."</p>";
+                    echo "<p>".$item->getMessage()."</p>";
+                    echo "<p>".$item->getName()."</p>";
+                    // echo "<a href=".$block->getBaseUrl()."testimonial/blog/edit/id/".$item->getId().">Edit</a>";
+                    echo "</li>";                    
+                }
+            }
+            ?>
+    </ol>
+</div>
+<?php endif; ?>
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".testimonial-blog").slick({
+                autoplay: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            });
+        });
+    });
+</script>
