@@ -40,9 +40,9 @@
                     <item name="config" xsi:type="array">
                         <item name="type" xsi:type="string">delete</item>
                         <item name="label" xsi:type="string" translate="true">Delete</item>
-                        <item name="url" xsi:type="url" path="portfolio/category/delete"/>
+                        <item name="url" xsi:type="url" path="aht_testimonials/category/massDelete"/>
                         <item name="confirm" xsi:type="array">
-                            <item name="title" xsi:type="string" translate="true">Delete Post</item>
+                            <item name="title" xsi:type="string" translate="true">Delete</item>
                             <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
                         </item>
                     </item>
@@ -79,7 +79,7 @@
         <settings>
             <editorConfig>
                 <param name="clientConfig" xsi:type="array">
-                    <item name="saveUrl" xsi:type="url" path="portfolio/category/inlineEdit"/>
+                    <item name="saveUrl" xsi:type="url" path="aht_testimonials/category/inlineEdit"/>
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">category_id</param>
