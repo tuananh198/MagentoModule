@@ -44,15 +44,16 @@ class Save extends \Magento\Backend\App\Action
                 } elseif (isset($data['image'][0]['name']) && !isset($data['image'][0]['tmp_name'])) {
                     $data['image'] = $data['image'][0]['name'];
                 } else {
-                    $data['image'] = '';
+                    $data['image'] = ' ';
                 }
-                // echo "<pre>";
-                // print_r($data);
-                // echo "</pre>";
-                // die(); 
+
                 $data = array_filter($data, function($value) {return $value !== ''; });
 
                 $contact->setData($data);
+                // echo "<pre>";
+                // print_r($contact->getData());
+                // echo "</pre>";
+                // die(); 
                 $contact->save();
                 $this->messageManager->addSuccess(__('Successfully saved the testimonial.'));
                 $this->_objectManager->get('Magento\Backend\Model\Session')->setFormData(false);
